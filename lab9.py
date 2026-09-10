@@ -143,4 +143,5 @@ def plot_efficiency_curve(sorters, max_length, adversarial=False):
     pyplot.title("Efficiency Curve")
     pyplot.xlabel("Length of list")
     pyplot.ylabel("Number of comparisons")
+    pyplot.savefig("efficiency_curve.png")
     pyplot.show()
