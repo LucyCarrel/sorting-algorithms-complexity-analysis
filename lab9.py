@@ -8,7 +8,7 @@ class LessThan:
 
     def __call__(self, value1, value2):
     
-        if value2 < value1:
+        if value2 <= value1:
             value1, value2 = value2, value1
             ls = (value1, value2)
             self.history.append(ls)
@@ -54,7 +54,7 @@ def pivot_sort(ls, choose_pivot = lambda ls: 0):
     pivot = ls[index]
 
     for i in range(0,len(ls)):
-        if ls[i] != pivot:
+        if i != pivot:
 
             if lessthan(ls[i], pivot) == True:
                 less.append(ls[i])
