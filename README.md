@@ -1,13 +1,23 @@
-CSCI 134 Lab 9 ("Order Muppets")
---------------------------------
+# Sorting Algorithms & Complexity Analysis
 
-The assignment description can be found 
-[here](https://docs.google.com/document/d/1v6yWTiriQWTtdWrXEaOKo_8wm1imsSzrGl3BfSNNB2k/edit?usp=sharing).
+I implemented bubble sort, quicksort, and merge sort in Python, then actually measured how they perform, validating the textbook's Big-O values.
 
-This repository contains a starter file for the code you need to write for Lab 9:
-- `lab9.py`: Put your code in this file.
+![Efficiency curve](results/efficiency_curve.png)
 
-It also contains code for trees that you should use but not modify.
-This code can found in `trees.py`.
+## What's mine
 
-Ignore (but do not delete!!!) the other files in this repository.
+`trees.py` was given to us as starter code. Everything in `lab9.py` — the comparison-counting `LessThan` class and all three sorts — is code I wrote for CSCI 134 at Williams.
+
+## What I found
+
+- Bubble sort really is O(n²): doubling the list from 100 to 200 items roughly quadrupled the number of comparisons (~5,000 → ~20,000).
+- Quicksort's worst case is real, not just theoretical — with a fixed pivot, it degrades to bubble-sort-level slowness on a list that's already sorted.
+- Fix: pick the pivot randomly instead, and that problem mostly goes away.
+- Merge sort didn't care what order the input was in — it stayed fast no matter what I threw at it.
+
+## Try it yourself
+
+```bash
+pip install matplotlib
+python3 -c "from lab9 import *; plot_efficiency_curve([bubble_sort, quick_sort, merge_sort], 200)"
+```
