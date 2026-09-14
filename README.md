@@ -2,8 +2,6 @@
 
 I implemented bubble sort, quicksort, and merge sort in Python, then actually measured how they perform, validating the textbook's Big-O values.
 
-![Efficiency curve](results/efficiency_curve.png)
-
 ## What's mine
 
 `trees.py` was given to us as starter code. Everything in `lab9.py` — the comparison-counting `LessThan` class and all three sorts — is code I wrote for CSCI 134 at Williams.
